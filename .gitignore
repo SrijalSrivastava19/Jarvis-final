@@ -1,0 +1,17 @@
+frontend/node_modules
+frontend/.next
+
+backend/.venv
+backend/__pycache__
+backend/data
+backend/logs
+backend/voices
+
+backend/.env
+
+*.pyc
+*.pyo
+
+.vscode
+.DS_Store
+Thumbs.db

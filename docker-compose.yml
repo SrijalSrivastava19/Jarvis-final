@@ -1,0 +1,47 @@
+services:
+  ollama: 
+    image: ollama/ollama:latest
+    container_name: jarvis-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: jarvis-backend
+    env_file:
+      - ./backend/.env
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434
+      CORS_ORIGINS: http://localhost:3000
+    ports:
+      - "8000:8000"
+    volumes:
+      - backend_data:/app/data
+      - backend_logs:/app/logs
+      - ./backend/voices:/app/voices
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: jarvis-frontend
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
+  backend_data:
+  backend_logs:
