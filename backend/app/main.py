@@ -9,7 +9,13 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import routes_chat, routes_health, routes_voice, routes_news
+from app.api import (
+    routes_chat,
+    routes_health,
+    routes_voice,
+    routes_news,
+    routes_weather,
+)
 from app.config import settings
 from app.core.exceptions import JarvisError, jarvis_error_handler, unhandled_exception_handler
 from app.db.database import init_db
@@ -29,10 +35,11 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Jarvis AI Assistant API",
-    description="Phase 1: Voice conversation system (STT, LLM, TTS, wake word, memory).",
-    version="0.1.0",
+    description="Jarvis AI Assistant (Voice, News, Weather)",
+    version="0.3.0",
     lifespan=lifespan,
 )
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -49,8 +56,17 @@ app.include_router(routes_health.router)
 app.include_router(routes_chat.router)
 app.include_router(routes_voice.router)
 app.include_router(routes_news.router)
-
+app.include_router(routes_weather.router)
 
 @app.get("/")
 async def root():
-    return {"name": "Jarvis AI Assistant API", "phase": 1, "docs": "/docs"}
+    return {
+        "name": "Jarvis AI Assistant API",
+        "version": "0.3.0",
+        "modules": [
+            "Voice",
+            "News",
+            "Weather"
+        ],
+        "docs": "/docs"
+    }

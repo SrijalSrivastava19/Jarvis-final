@@ -6,6 +6,7 @@ in development). Never hardcode secrets or environment-specific values
 elsewhere in the codebase — import `settings` from this module instead.
 """
 from functools import lru_cache
+import os
 from typing import List
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -27,6 +28,11 @@ class Settings(BaseSettings):
     ollama_model: str = "llama3.2"
     ollama_timeout_seconds: int = 120
 
+    # --- Weather ---
+    openweather_api_key: str = ""
+    default_city: str = "Lucknow"
+    weather_provider: str = "openweather"
+
     # --- Whisper ---
     whisper_model_size: str = "base"
     whisper_device: str = "cpu"
@@ -46,7 +52,7 @@ class Settings(BaseSettings):
 
         # --- News ---
     newsdata_api_key: str = ""
-    news_cache_ttl_minutes: int = 10    
+    news_cache_ttl_minutes: int = 10   
     news_max_headlines: int = 5
     espn_rss_url: str = "https://www.espn.com/espn/rss/news"
     news_cache_seconds: int = 600

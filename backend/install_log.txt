@@ -1,0 +1,64 @@
+Collecting fastapi==0.115.0 (from -r requirements.txt (line 1))
+  Using cached fastapi-0.115.0-py3-none-any.whl.metadata (27 kB)
+Collecting uvicorn==0.30.6 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Using cached uvicorn-0.30.6-py3-none-any.whl.metadata (6.6 kB)
+Collecting pydantic==2.9.2 (from -r requirements.txt (line 3))
+  Using cached pydantic-2.9.2-py3-none-any.whl.metadata (149 kB)
+Collecting pydantic-settings==2.5.2 (from -r requirements.txt (line 4))
+  Using cached pydantic_settings-2.5.2-py3-none-any.whl.metadata (3.5 kB)
+Collecting sqlalchemy==2.0.35 (from -r requirements.txt (line 5))
+  Using cached SQLAlchemy-2.0.35-py3-none-any.whl.metadata (9.6 kB)
+Collecting aiosqlite==0.20.0 (from -r requirements.txt (line 6))
+  Using cached aiosqlite-0.20.0-py3-none-any.whl.metadata (4.3 kB)
+Collecting httpx==0.27.2 (from -r requirements.txt (line 7))
+  Using cached httpx-0.27.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting python-multipart==0.0.9 (from -r requirements.txt (line 8))
+  Using cached python_multipart-0.0.9-py3-none-any.whl.metadata (2.5 kB)
+Collecting faster-whisper==1.0.3 (from -r requirements.txt (line 9))
+  Using cached faster_whisper-1.0.3-py3-none-any.whl.metadata (15 kB)
+Collecting numpy==1.26.4 (from -r requirements.txt (line 10))
+  Using cached numpy-1.26.4.tar.gz (15.8 MB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  Preparing metadata (pyproject.toml) did not run successfully.
+  exit code: 1
+  
+  [19 lines of output]
+  + C:\Users\Srijal Srivastava\OneDrive\Desktop\Skills\Jarvis-final\backend\.venv\Scripts\python.exe C:\Users\Srijal Srivastava\AppData\Local\Temp\pip-install-zg8qcslf\numpy_abb258830b504b09a22ef24227f47ebc\vendored-meson\meson\meson.py setup C:\Users\Srijal Srivastava\AppData\Local\Temp\pip-install-zg8qcslf\numpy_abb258830b504b09a22ef24227f47ebc C:\Users\Srijal Srivastava\AppData\Local\Temp\pip-install-zg8qcslf\numpy_abb258830b504b09a22ef24227f47ebc\.mesonpy-dnmh9bou -Dbuildtype=release -Db_ndebug=if-release -Db_vscrt=md --native-file=C:\Users\Srijal Srivastava\AppData\Local\Temp\pip-install-zg8qcslf\numpy_abb258830b504b09a22ef24227f47ebc\.mesonpy-dnmh9bou\meson-python-native-file.ini
+  The Meson build system
+  Version: 1.2.99
+  Source dir: C:\Users\Srijal Srivastava\AppData\Local\Temp\pip-install-zg8qcslf\numpy_abb258830b504b09a22ef24227f47ebc
+  Build dir: C:\Users\Srijal Srivastava\AppData\Local\Temp\pip-install-zg8qcslf\numpy_abb258830b504b09a22ef24227f47ebc\.mesonpy-dnmh9bou
+  Build type: native build
+  Project name: NumPy
+  Project version: 1.26.4
+  C compiler for the host machine: gcc (gcc 6.3.0 "gcc (MinGW.org GCC-6.3.0-1) 6.3.0")
+  C linker for the host machine: gcc ld.bfd 2.28
+  C++ compiler for the host machine: c++ (gcc 6.3.0 "c++ (MinGW.org GCC-6.3.0-1) 6.3.0")
+  C++ linker for the host machine: c++ ld.bfd 2.28
+  Cython compiler for the host machine: cython (cython 3.0.12)
+  Host machine cpu family: x86
+  Host machine cpu: x86
+  
+  ..\meson.build:28:4: ERROR: Problem encountered: NumPy requires GCC >= 8.4
+  
+  A full log can be found at C:\Users\Srijal Srivastava\AppData\Local\Temp\pip-install-zg8qcslf\numpy_abb258830b504b09a22ef24227f47ebc\.mesonpy-dnmh9bou\meson-logs\meson-log.txt
+  [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+Encountered error while generating package metadata.
+
+numpy
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
